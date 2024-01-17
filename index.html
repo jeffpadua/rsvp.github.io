@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--
+	JMP - RSVP
+-->
+<html>
+	<head>
+		<title>J & M - RSVP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" type="image/x-icon" href="J&M.png" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+		
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-heart"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<span class="image main"><video autoplay loop muted playsinline controls height="80%" width="80%">
+									<source src="Jefferson and Michaela STD.mp4" type="video/mp4">
+								</video></span>
+								<h1>JEFFERSON & MICHAELA</h1>	
+									<p><center>We want you to be there and celebrate love with us as we tie the knot!<br>
+									<br>Thursday, <strong>09 May 2024</strong><br> 1:00 PM at <strong>St. Benedict Parish</strong> <br>Silang, Cavite
+									<br><br>Reception to follow	 at<br> <strong>CANA at Silang</strong><br> Silang, Cavite</center></p>							
+								</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#rsvp">RSVP</a></li>
+								<li><a href="#attire">Attire</a></li>								
+								<li><a href="#location">Location</a></li>
+								<li><a href="#gifts">Gifts</a></li>				
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+										
+
+						<!-- RSVP -->
+						<article id="rsvp">
+							<h2 class="major">RSVP</h2>
+							As much as we would like to celebrate this special day with everyone, please be advised that we can only accommodate limited number of guests in our wedding.<br><br><br>
+							<form id="rsvpForm" action="https://sheetdb.io/api/v1/crdk8qmmcatuu" method="POST" id="sheetdb-form">
+								<div class="fields">
+										<label for="FirstName">First Name</label>
+										<input type="text" oninput="convertToUpperCase(this)" required placeholder="First Name" name="data[FirstName]" id="FirstName"/>
+										<label for="LastName"><br>Last Name</label>
+										<input type="text" oninput="convertToUpperCase(this)" required placeholder="Last Name" name="data[LastName]" id="LastName"/>
+										<label for="Attendance"><br>Will you attend?</label>
+										<select id="Attendance" name="data[Attendance]" required>
+											<option value="YES">Yes, of course!</option>
+											<option value="NO">Sorry, I can't make it.</option>
+										   </select>																										
+								</div>
+								<ul class="actions">
+									<li><input type="submit" class="btn" onclick="openPopup()" value="submit" class="button primary" /></li>									
+									<li><input type="reset" value="Reset" /></li>									
+								</ul>								
+							</form>
+							<div class="popup" id="popup">
+								<img src="check.png">
+								<h2>Thank you!</h2>
+								<p>Response has been successfully submitted. Thanks!</p>
+								<button type="button" onclick="closePopup()">OK</button>
+							</div>
+							<script>
+								let popup = document.getElementById("popup");
+
+								function openPopup() {
+									popup.classList.add("open-popup");
+								}
+								function closePopup() {
+									popup.classList.remove("open-popup");
+								}
+							</script>
+							<script>
+								function convertToUpperCase(input) {
+								  input.value = input.value.toUpperCase();
+								}
+							  </script>
+							<script>
+																		
+								var form = document.getElementById('sheetdb-form');
+								form.addEventListener("submit", e => {
+									e.preventDefault();
+									fetch(form.action, {
+										method : "POST",
+										body: new FormData(document.getElementById("sheetdb-form")),
+									}).then(
+										response => response.json()
+									).then((html) => {
+										window.open('index.html','_blank');
+									});
+									
+								});
+							</script>
+							<script>
+								// Function to show the success modal
+								function openModal() {
+									document.getElementById('successModal').style.display = 'flex';
+								}
+							
+								// Function to close the success modal
+								function closeModal() {
+									document.getElementById('successModal').style.display = 'none';
+								}
+							
+								// Form submission handling
+								document.getElementById('rsvpForm').addEventListener('submit', function (event) {
+									event.preventDefault();
+							
+									// You may add additional validation here if needed
+							
+									// Submit the form using FormSubmit
+									fetch(this.action, {
+										method: 'POST',
+										body: new FormData(this),
+									})
+									.then(response => {
+										if (response.ok) {
+											// Show the success modal
+											openModal();
+											// You can add additional actions here if needed
+										} else {
+											// Handle the error case
+											console.error('Error submitting form:', response.statusText);
+										}
+									})
+									.catch(error => console.error('Error:', error));
+								});
+							</script>
+						</article>
+
+						<!-- Attire -->
+							<article id="attire">
+								<h2 class="major">Attire</h2>								
+								<center><h3>PRINCIPAL SPONSORS</h3></center>		
+								<span class="image main"><img src="principal.jpg" /></span>								
+								<div class="row">
+									<div class="column">
+									  <strong>Female:</strong>
+									  <p>• Champagne Gold Long Gown</p>
+									</div>
+									<div class="column">
+									 <strong>Male:</strong>
+									  <p>• Black Suit<br>• White Longsleeves as inner<br>• Champagne Gold Necktie <br><i>(Necktie to be provided by the couple)</i></p>
+									</div>
+								  </div>							
+								<center><strong>GUESTS: </strong><br>(<i>We would love to see you in shades of gray, blue and brown.</i>)</center>
+								<span class="image main"><img src="images/pic01.jpg" /></span>	
+								<b>STRICTLY FORMAL</b><br>
+								• Cocktail Dress, Midi Dress, Pantsuit or Long Gown for <strong>Ladies</strong><br>
+								• Coat & Tie or Longsleeves & Slacks for <strong>Gentlemen</strong>
+								
+							</article>
+
+						<!-- Gifts -->
+							<article id="gifts">
+								<h2 class="major">Gifts</h2>
+								<p>As love is what the day is all about, your presence is one we can't celebrate without. But should you believe that a gift is worth giving, a monetary gift for our future would be a delightful blessing.
+									<div class="row">
+										<div class="column">
+										  <strong>GCash:</strong>
+										  <br>Jefferson M. Padua<br>
+								  		  0917-870-3002<br>
+										<span class="image main"><img src="QRG.JPG" /></span>
+										</div>
+										<div class="column">	
+										 <strong>BPI:</strong>
+										 <br>Michaela D. Asuncion<br>
+										 2219216079<br>
+										 <span class="image main"><img src="QRBPI.JPG" /></span>										
+										</div>
+									  </div>
+									  <br><br><br><br><br><br>
+								   </p>
+							</article>
+
+						<!-- Location -->
+							<article id="location">
+								<h2 class="major">Location</h2>
+								<span class="image main"><img src="images/church.jpg"/></span>
+								<h3>CEREMONY: </h3>
+									<strong>St. Benedict Parish</strong>
+									<br>Silang, Cavite<br>
+											<ul class="actions">
+												<li><a target="_blank" href="https://www.waze.com/live-map/directions/ph/calabarzon/silang/st.-benedict-parish?navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location&to=place.ChIJC153kgV9vTMRPrEMccUl_ss" class="button primary color2">Waze</a></li>
+												<li><a target="_blank" href="https://www.google.com/maps/dir//62QR%2BR8Q+St.+Benedict+Parish,+South+Blvd,+Silang,+4118+Cavite/@14.2396094,121.038326,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x33bd7d0592775e0b:0xcbfe25c5710cb13e!2m2!1d121.0409009!2d14.2396042?entry=ttu" class="button">Google Maps</a></li>
+											</ul>
+								<span class="image main"><img src="images/cana.jpg" /></span>
+									<h3>RECEPTION:</h3>
+									<strong>CANA at Silang</strong>
+									<br>Silang, Cavite			
+										<ul class="actions">
+												<li><a target="_blank" href="https://www.waze.com/live-map/directions/ph/calabarzon/silang/cana-at-silang?to=place.ChIJF1jpG7h7vTMRHVLtVBSc6x0" class="button primary color2">Waze</a></li>
+												<li><a target="_blank" href="https://www.google.com/maps/dir//Cana+at+Silang,+Silang,+Cavite/@14.18472,120.9917971,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x33bd7bb81be95817:0x1deb9c1454ed521d!2m2!1d120.994372!2d14.1847148?entry=ttu" class="button">Google Maps</a></li>
+										</ul>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; For any inquiries, please contact <strong>Jefferson Padua</strong> at <strong>09178703002</strong>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
