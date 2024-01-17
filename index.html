@@ -66,16 +66,33 @@
 										   </select>																										
 								</div>
 								<ul class="actions">
-									<li><input type="submit" class="btn" onclick="openPopup()" value="submit" class="button primary" /></li>									
+									<li><input type="submit" class="btn" onclick="return validateForm()" value="submit" class="button primary" /></li>									
 									<li><input type="reset" value="Reset" /></li>									
 								</ul>								
 							</form>
+							<script>
+								function validateForm() {
+									// Perform your validation checks here
+									var FirstName = document.getElementById("FirstName").value;
+									var LastName = document.getElementById("LastName").value;
+						
+									if (FirstName === "" || LastName === "") {
+										alert("Please fill out all fields before submitting!");
+										return false; // Prevent form submission
+									}
+						
+									return openPopup();
+								}
+							</script>
+
 							<div class="popup" id="popup">
 								<img src="check.png">
 								<h2>Thank you!</h2>
 								<p>Response has been successfully submitted. Thanks!</p>
 								<button type="button" onclick="closePopup()">OK</button>
 							</div>
+
+							
 							<script>
 								let popup = document.getElementById("popup");
 
