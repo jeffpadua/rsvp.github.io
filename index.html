@@ -52,7 +52,7 @@
 						<!-- RSVP -->
 						<article id="rsvp">
 							<h2 class="major">RSVP</h2>
-							As much as we would like to celebrate this special day with everyone, please be advised that we can only accommodate limited number of guests in our wedding.<br><br><br>
+							As much as we would like to celebrate this special day with everyone, please be advised that we can only accommodate limited number of guests in our wedding. We have only chosen the people close to our hearts. <br><br><br>
 							<form id="rsvpForm" action="https://sheetdb.io/api/v1/crdk8qmmcatuu" method="POST" id="sheetdb-form">
 								<div class="fields">
 										<label for="FirstName">First Name</label>
@@ -79,11 +79,10 @@
 									if (FirstName === "" || LastName === "") {
 										alert("Please fill out all fields before submitting!");
 										return false; // Prevent form submission
-									}
-						
+									}						
 									return openPopup();
 								}
-							</script>
+							</script>			
 
 							<div class="popup" id="popup">
 								<img src="check.png">
@@ -92,7 +91,6 @@
 								<button type="button" onclick="closePopup()">OK</button>
 							</div>
 
-							
 							<script>
 								let popup = document.getElementById("popup");
 
